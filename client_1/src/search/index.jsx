@@ -59,12 +59,12 @@ export default class Search extends Component {
                     prop: 'month'
                 },
                 {
-                    label: "操作",
+                    label: "handle",
                     prop: "address",
                     render: data =>{
                       return (
                         <span>
-                         <Button type="danger" onClick={this.deleteItem.bind(this,data)} size="small">删除</Button>
+                         <Button type="danger" onClick={this.deleteItem.bind(this,data)} size="small">delete</Button>
                         </span>
                       )
                     }
