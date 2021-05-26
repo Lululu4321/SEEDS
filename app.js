@@ -1,18 +1,26 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
+const { Types: {ObjectId} }  = require('mongoose')
 const history = require('connect-history-api-fallback')
 
 require('./db/index.js')
 
 const Article = require('./db/model/article')
+const { mongo } = require('mongoose')
 
 // set cross-domain 
 app.use(cors({
     origin: '*',
     methods: '*'
 }))
-
+app.get('/del', async (req, res) => {
+    const {id} = req.query;
+    const r = await Article.remove({_id: ObjectId(id)})
+    res.json({
+        code: 1
+    })
+})
 app.get('/search', async (req, res) => {
     const query = req.query;
     let resp = [];
