@@ -50,6 +50,9 @@ app.get('/add', async (req, res) => {
         code: 1
     })
 })
+app.get('/test', (req, res) => {
+    res.json({code: 200, msg: 'a test'})
+})
 
 app.use(history());
 app.use(express.static('view/build'));
