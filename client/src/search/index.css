@@ -1,0 +1,7 @@
+.search {
+    padding: 40px;
+    background-color: #635a5a;;
+}
+.search .el-form-item__label {
+    color: #fff!important;
+}
