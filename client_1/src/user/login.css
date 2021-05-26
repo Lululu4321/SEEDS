@@ -1,0 +1,14 @@
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(../assets/imgs/loginbg.jpeg) no-repeat;
+    background-size: cover;
+}
+#login form{
+    width: 400px;
+}
+#login .el-form-item__label {
+    color: #fff;
+}
