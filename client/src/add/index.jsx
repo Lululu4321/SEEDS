@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import { Form, Input, Layout, DatePicker, Button } from 'element-react'
 import {filterEmpty} from '../utils'
-
+import './index.css'
 export default class Add extends Component {
     constructor(props) {
         super(props)
@@ -68,39 +68,25 @@ export default class Add extends Component {
         const { condition } = this.state;
         return (
             <div>
-            <Form className="search" model={condition} labelWidth="80" onSubmit={this.onSubmit.bind(this)}>
-                <Layout.Row>
-                    <Layout.Col span="6">
+            <Form className="add"  model={condition} labelWidth="80" onSubmit={this.onSubmit.bind(this)}>
                         <Form.Item label="author">
                             <Input value={condition.author} onChange={this.onChange.bind(this, 'author')}></Input>
                         </Form.Item>
-                    </Layout.Col>
-                    <Layout.Col span="6">
                         <Form.Item label="title">
                             <Input value={condition.title} onChange={this.onChange.bind(this, 'title')}></Input>
                         </Form.Item>
-                    </Layout.Col>
-                    <Layout.Col span="6">
                         <Form.Item label="journal">
                             <Input value={condition.journal} onChange={this.onChange.bind(this, 'journal')}></Input>
                         </Form.Item>
-                    </Layout.Col>
-                    <Layout.Col span="6">
                         <Form.Item label="volume">
                             <Input value={condition.volume} onChange={this.onChange.bind(this, 'volume')}></Input>
                         </Form.Item>
-                    </Layout.Col>
-                    <Layout.Col span="6">
                         <Form.Item label="pages">
                             <Input value={condition.pages} onChange={this.onChange.bind(this, 'pages')}></Input>
                         </Form.Item>
-                    </Layout.Col>
-                    <Layout.Col span="6">
                         <Form.Item label="number">
                             <Input value={condition.number} onChange={this.onChange.bind(this, 'number')}></Input>
                         </Form.Item>
-                    </Layout.Col>
-                    <Layout.Col span="6">
                         <Form.Item label="date">
                             <DatePicker
                                 value={condition.date}
@@ -110,13 +96,9 @@ export default class Add extends Component {
                                 selectionMode="month"
                             />
                         </Form.Item>
-                    </Layout.Col>
-                    <Layout.Col span="6">
                         <Form.Item label="">
                             <Button type="primary" onClick={this.getAdd.bind(this)} icon="upload">submit</Button>
                         </Form.Item>
-                    </Layout.Col>
-                </Layout.Row>
                 </Form>
             </div>
         )

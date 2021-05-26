@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
+const history = require('connect-history-api-fallback')
 
 require('./db/index.js')
 
@@ -42,8 +43,7 @@ app.get('/add', async (req, res) => {
     })
 })
 
-app.get('/', (req, res) => {
-    res.end('hello world')
-})
+app.use(history());
+app.use(express.static('view/build'));
 
 app.listen(process.env.PORT || 5000);

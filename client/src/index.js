@@ -9,7 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import { i18n } from 'element-react'
 import locale from 'element-react/src/locale/lang/en'
 
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 
 
 i18n.use(locale);
@@ -22,6 +22,7 @@ ReactDOM.render(
       <Route path="/p" component={App}></Route>
       <Route path="/login" component={Login}></Route>
       <Route path="/register" component={Register}></Route>
+      <Redirect to="/login" />
     </Switch>
   </Router>
   ,
